@@ -2,6 +2,7 @@ package logic;
 
 import dao.AdminDao;
 import model.Admin;
+import rest.Main;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -10,8 +11,7 @@ import javax.persistence.Persistence;
 public class AdminDaoImpl implements AdminDao {
 
     private EntityManager em;
-    private final static EntityManagerFactory emf =  Persistence.createEntityManagerFactory("PersistenceUnit");
-
+    private final static EntityManagerFactory emf = Main.emf;
 
     @Override
     public String add(Admin admin) {

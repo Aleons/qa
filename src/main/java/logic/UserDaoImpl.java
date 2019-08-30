@@ -2,6 +2,7 @@ package logic;
 
 import dao.UserDao;
 import model.User;
+import rest.Main;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -11,8 +12,7 @@ import java.util.List;
 public class UserDaoImpl implements UserDao {
 
     private EntityManager em;
-    private final static EntityManagerFactory emf =  Persistence.createEntityManagerFactory("PersistenceUnit");
-
+    private final static EntityManagerFactory emf = Main.emf;
 
     @Override
     public String add(User user) {
