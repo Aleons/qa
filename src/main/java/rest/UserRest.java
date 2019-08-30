@@ -15,6 +15,9 @@ public class UserRest {
 
     private Gson gson;
 
+    public UserRest(Gson gson) {
+        this.gson = new Gson();
+    }
 
     @RequestMapping(value = "/getAllUsers", method = RequestMethod.GET)
     public String getAllUser(){
