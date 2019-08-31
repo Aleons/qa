@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 @RestController
 public class AuthRe {
@@ -19,6 +20,7 @@ public class AuthRe {
     public AuthRe(Gson gson) {
         this.gson = new Gson();
     }
+
 
 
 
@@ -47,8 +49,9 @@ public class AuthRe {
     }
 
 
-    @RequestMapping(value = "/exit", method = RequestMethod.DELETE)
-    public String delete(@RequestParam(name="mail") String mail){
+    @RequestMapping(value = "/exit", method = RequestMethod.POST)
+    public String delete(@RequestParam(name="token") String mail){
+        System.out.println("Это пример лога. Баг из-за того, что я ленивый разработчик и не сделал метод");
        return " {“status” : “Ошибка”}";
     }
 
